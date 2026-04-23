@@ -10,7 +10,7 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    
+
     # Run tests across multiple Python versions to ensure compatibility
     strategy:
       matrix:
@@ -33,6 +33,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install -e .
         pip install pytest build
 
     # 4. Run the test suite
